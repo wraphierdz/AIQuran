@@ -19,7 +19,7 @@ Meski keliatan interesting and exciting, AI ini masi butuh banyak banget belajar
 
 ## Daftar Isi/Rincian File
 
-1. app.py = isinya flask, buat ngerender html file, routing dan ngepost respon dengan ngasi tau problem yg diinput ke module chat.py biar jalanin function chatbot(). cukup ngerun app.py = udah ngerun AI Quran nya tinggal pake di localhost
+1. app.py = isinya flask, buat ngerender html file, routing dan ngepost respon dengan ngasi tau user input ke module chat.py biar jalanin function chatbot(). cukup ngerun app.py = udah ngerun AI Quran nya tinggal pake di localhost
 
 2. chat.py = jalanin function chatbot() buat manggil method get_response() di class QASystem di module model.py untuk dikasi ke app.py biar dipost ke web sama buat mastiin berhasil ngerespon apa engga
 
