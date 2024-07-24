@@ -1,7 +1,6 @@
 # AI Quran
-### Artificial Intelligence Quran
+### *AI pake I bukan pake l, i kapital.
 
-*AI pake I bukan pake l, i kapital.
 Manusia punya masalah, tuhan punya solusi. Punya masalah? Al-Quran adalah pedoman solusi dari tuhan.
 Al-Quran pedoman manusia yang bisa ngesolve berbagai problem hidupnya.
 So, kenapa nggak langsung cari solusi masalah dari Al-Quran aja? Gatau ayat mana yang relate?
