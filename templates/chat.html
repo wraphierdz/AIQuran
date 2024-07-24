@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Quran</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <style type="text/css">
+
+        .fixed-panel {
+            min-height: 400px;
+            max-height: 400px;
+            background-color: #19313c;
+            color: white;
+            overflow: auto;
+        }
+
+        .media .media-body .question, .media .media-body .answer, .greetings {
+            width: 95%;
+            height: 100%;
+            border-radius: 30px;
+            padding: 17px 20px 20px;
+            transform: translateX(-20px) scale(0.3);
+            animation: slideIn 0.5s forwards;
+        }
+
+        .media .media-body .question {
+            margin-left: 26px;
+            transform: translateX(20px) scale(0.3);
+        }
+
+        .media-list {
+            overflow: auto;
+            clear: both;
+            display: table;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: normal;
+            line-break: strict;
+        }
+
+        .panel {
+            margin-bottom: 20px;
+            background-color: #0c2735;
+            border: 6px solid transparent;
+            border-radius: 25px;
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+        }
+
+        .panel-info {
+            border-color: #0c2735;
+        }
+
+        .panel-info>.panel-heading {
+            background-color: #0c2735;
+            border-color: #0c2735;
+            border-radius: 20px 20px 0px 0px;
+            color: #5fadc1;
+        }
+
+        .panel-footer {
+            padding: 12px 15px;
+            background-color: #0c2735;
+            border-top: 1px solid #0c2735;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px
+        }
+
+        body {
+            background: linear-gradient(-30deg, rgb(79, 66, 95) 0%, rgb(79, 60, 88) 7%, rgb(69, 103, 105) 52%, rgba(26, 30, 59, 1) 100%);
+            height: 100vh;
+        }
+
+        .container {
+            height: 100%;
+            margin: auto;
+            height: 100%;
+            width: 75%;
+            margin-left: 22%;
+        }
+
+        .welcome {
+            text-align: center;
+            font-size: 50px;
+            color: #f2f2f2;
+            margin: 0px auto 30px;
+        }
+
+        .form-control {
+            font-size: 14px;
+            height: 40px;
+            color: #e9e9e9;
+            background-color: #071f2b;
+            border: 3px solid #33576b;            
+        }
+
+        .btn-info {
+            color: #c2fdff;
+            background-color: #08445e;
+            border: 3px solid #5a7eb7;
+            padding: 0px;
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
+            
+        }
+        
+        .input-group .form-control:first-child {
+            border-radius: 100px;
+            width: 100%;
+            padding-right: 40px;
+        }
+        
+        .input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:first-child>.btn-group:not(:first-child)>.btn, .input-group-btn:first-child>.btn:not(:first-child), .input-group-btn:last-child>.btn {
+            display: inline;
+            border-radius: 50%;
+            position: relative;
+            right: 35px;
+            z-index: 3;
+        }
+
+        .credit-text {
+            font-family: sans-serif, Arial, Helvetica;
+            font-size: 12px;
+            color: #76b8ba;
+            text-align: center;
+            margin: 15px auto 0px;
+        }
+
+        .end {
+            border-color: #6e9fa4;
+            width: 200px;
+            text-align: center;
+            margin: 5px auto;
+        }
+
+        .sider {
+            position: absolute;
+            width: 20%;
+            height: 100%;
+            background-color: #071f2b;
+
+        }
+
+        .desc-container {
+            width: 90%;
+            height: 80%;
+            margin: 100px auto 5px;
+        }
+
+        .desc-intro {
+            width: 75%;
+            height: 20%;
+            border: 5px solid #33576b;
+            border-radius: 30px;
+            margin: auto;
+            margin-bottom: 40px;
+
+        }
+
+        .desc-intro h2 {
+            color: white;
+            text-align: center;
+            padding: 3px 2px 1px;
+        }
+
+        .desc-intro p {
+            color: rgb(170, 174, 179);
+            text-align: center;
+            font-size: 10px;
+            padding: 1px 2px 3px;
+        }
+
+        
+        .desc-wrap {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 6px;
+            margin: auto;
+            width: 80%;
+            height: 50%;
+        }
+        
+        .desc-wrap hr{
+            border: 2px solid #3a5f61;
+        }
+
+        .salam {
+            color: rgb(108, 184, 184);
+            margin: 10px auto 0px;
+            text-align: center;
+        }
+
+        .desc {
+            color: rgb(149, 195, 181);
+            margin-bottom: 2px;
+        }   
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+
+        /* powered by https://sohipm.com */
+    </style>
+    <style id="__web-inspector-hide-shortcut-style__">
+        .__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after {
+            visibility: hidden !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sider">
+        <div class="desc-container">
+            <div class="desc-intro">
+                <h2>AI Quran</h2>
+                <p>Bacanya AI bukan Al, pake i kapital :)</p>
+            </div>
+            <h3 class="salam">Assalamualaikum!</h3>
+            <div class="desc-wrap">
+                <br>
+                <p class="desc">Manusia punya masalah, tuhan punya solusi. Punya masalah? Al-Quran adalah pedoman solusi dari tuhan.</p>
+                <hr>
+                <p class="desc">Ceritakan masalah hidupmu, AI Quran akan bantu menemukan ayat Al-Quran yang mungkin bisa memberi solusi.</p>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <br>
+        <br>
+
+        <div class="row">
+            <h1 class="welcome">Welcome To AI Quran</h1>
+            <br>
+            <div class="col-md-8 col-md-offset-2">
+                <div id="chatPanel" class="panel panel-info">
+                    <div class="panel-heading">
+                        <strong>AI Quran - Chatbox</strong>
+                    </div>
+                    <div class="panel-body fixed-panel">
+                        <ul class="media-list">
+                            <li class="media">
+                                <div class="media-body">
+                                    <div class="greetings" style="background-color: #3a5f61; text-align:left; color : #bbd8c7;">
+                                        <p>وَٱلسَّلَـٰمُ عَلَىَّ يَوْمَ وُلِدتُّ وَيَوْمَ أَمُوتُ وَيَوْمَ أُبْعَثُ حَيًّا <br>
+                                        Kesejahteraan semoga dilimpahkan kepadaku pada hari kelahiranku, hari wafatku, dan hari aku dibangkitkan hidup (kembali).” [Q.S. Maryam (19) : 33]</p>
+                                        Assalamualaikum, heppi b'day chapter 19!🎉 Kita berdoa semoga hidup damai tanpa masalah ya, tapi kalo ada masalah langsung minta yang di atas dengan curhat di bawah hehe. Tenang datanya ngga kesimpen kok. Tapi ini AI masi bocil perlu belajar banyak mohon dimaklumi kalo jawabnya ga sesuai😅. Yang salah bukan Al-Qurannya tapi AI Qurannya🙏
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="panel-footer">
+                        <form method="post" id="chatbot-form">
+                            <div class="input-group">
+                                <span class="input-group-btn">
+                                    <input type="text" class="form-control" placeholder="Tell god what's your problem" name="messageText" id="messageText" autofocus="">
+                                    <button class="btn btn-info" type="button" id="chatbot-form-btn"><strong>⪢</strong></button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="credit">
+            <div class="credit-text">- (Powered by Zep Analytics) -</div>
+            <hr class="end">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+        var exports = {};
+    </script>
+    <script>
+        $(function () {
+
+            $('#chatbot-form-btn').click(function (e) {
+                e.preventDefault();
+                $('#chatbot-form').submit();
+            });
+
+            $('#chatbot-form').submit(function (e) {
+                e.preventDefault();
+                var message = $('#messageText').val();
+                $(".media-list").append(
+                    '<li class="media"><div class="media-body"><div class="question" style="text-align : left; background-color: #317268; color : #9fe4e0">' +
+                    message + '</div></div></div></li>');
+
+                $.ajax({
+                    type: "POST",
+                    url: "/ask",
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        $('#messageText').val('');
+                        var answer = response.answer;
+                        const chatPanel = document.getElementById("chatPanel");
+                        $(".media-list").append(
+                            '<li class="media"><div class="media-body"><div class="answer" style="text-align: left; background-color: #3a5f61; color : #bbd8c7">' +
+                            answer + '</div></div></div></li>');
+                        $(".fixed-panel").stop().animate({
+                            scrollTop: $(".fixed-panel")[0].scrollHeight
+                        }, 1000);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
