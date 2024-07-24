@@ -37,7 +37,7 @@ Meski keliatan interesting and exciting, AI ini masi butuh banyak banget belajar
 2. Open/navigate ke project directory nya
 3. Run file app.py
 4. Go to local host
-5. Curahkan isi hatimu.
+5. Curahkan isi hatimu :)
 6. Kalo bingung ngisi prompt, coba: "aku tidak punya tujuan hidup yang jelas. ke manakah arah hidup?"
 
 ## Future improvements
