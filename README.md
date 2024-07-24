@@ -9,6 +9,15 @@ Jrengg sekarang kita punya AI Quran yey. AI Quran bisa ngasi respon ayat quran m
 
 Meski keliatan interesting and exciting, AI ini masi butuh banyak banget belajar dan masih banyak gataunya, masi bayi. masih sangat rawan ngasi output yang ga relevan sebab dataset yang difeed cuman beberapa, sedangkan ayat Al-Quran total ada 6000 lebih. Artinya kita harus mapping 6000 ayat itu ke masalah yang relate sesuai relevansi problem dan ayatnya. We need more data. In fact, buat saat ini cuman bisa ngasi ayat sama translate nya doang tanpa ngegenerate teks buat explain, ngasi kesimpulan/saran yang bisa diambil dari ayat tsb buat ngesolve problem soale kita ngebuild dari nol tanpa pake API kek OpenAI API dkk. But in further development, it's not impossible at all.
 
+
+## Required packages
+
+1. pandas
+2. numpy
+3. nltk
+4. scikit-learn
+5. flask
+
 ## Daftar Isi/Rincian File
 
 1. app.py = isinya flask, buat ngerender html file, routing dan ngepost respon dengan ngasi tau problem yg diinput ke module chat.py biar jalanin function chatbot(). cukup ngerun app.py = udah ngerun AI Quran nya tinggal pake di localhost
