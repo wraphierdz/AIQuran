@@ -48,4 +48,8 @@ Versi ini masi need much more improvements. Yang mungkin bisa diimprove:
 2. Generate teks di bawah dalil buat ngasi penjelasan, kesimpulan dan saran dari dalil yang ditunjukin
 3. Mungkin bisa ditambahin hadis meski ntar ada yang salah dengan namanya
 4. Ngesave user input dan responnya ke dataset biar bisa dievaluasi dan biar bisa self learning.
-   
+
+## References
+1. https://github.com/hablullah/data-quran
+2. https://www.kaggle.com/datasets/imrankhan197/the-quran-dataset
+3. https://github.com/pik1989/Cosine-Similarity-Chatbot
