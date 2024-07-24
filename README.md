@@ -29,7 +29,7 @@ Meski keliatan interesting and exciting, AI ini masi butuh banyak banget belajar
 
 5. clean_dataset.csv = dataset yang udah dibersihin biar bisa diread tanpa error
 
-6. chat.html = tampilan front-end web, include internal css styling sama js script
+6. chat.html = tampilan front-end web, include internal css styling sama script
 
 ## Running the program
 
